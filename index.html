@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New finder</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <form id="js-form">
+            <div class="label-wrapper">
+                <label for="search-term" class="search-field">type in a github username</label>
+            </div>
+            <input type="text" name="seatch-term" id="js-search-term" required>
+            <div class="label-wrapper">
+                <label for="max-results">max results to display</label>
+            </div>
+            <input type="number" id="js-max-results" value="10">
+            <input type="submit" id="js-search-button" value="search">
+
+
+            <section id="results">
+                <h2>Search results</h2>
+                <ul id="results-list">
+                </ul>
+            </section>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
