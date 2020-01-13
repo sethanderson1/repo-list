@@ -3,16 +3,17 @@
 
 
 
-function displayResults(responseJson) {
+function displayResults(responseJson,maxResults) {
     $('#results-list').empty();
-    // for(let i = 0; i< responseJson.)
-    $('#results-list').append(
-        `<li><a href="${responseJson[0].html_url}">
-        ${responseJson[0].name}</a></li>`
-    )
-    $('#results-list').removeClass('hidden');
 
-    console.log(responseJson[0].name)
+    for (let i = 0; i< responseJson.length && i < maxResults; i++) {
+        $('#results-list').append(
+            `<li><a href="${responseJson[i].html_url}">
+            ${responseJson[i].name}</a></li>`
+        )
+    }
+
+    $('#results-list').removeClass('hidden');
 
 }
 
@@ -24,7 +25,7 @@ function getRepos(userName,maxResults) {
     console.log(url)
     fetch(url)
     .then(response=>response.json())
-    .then(responseJson=>displayResults(responseJson))
+    .then(responseJson=>displayResults(responseJson,maxResults))
 }
 
 function handleForm() {
